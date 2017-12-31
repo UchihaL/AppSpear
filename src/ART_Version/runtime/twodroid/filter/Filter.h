@@ -1,0 +1,50 @@
+#ifndef ART_RUNTIME_TWODROID_FILTER_FILTER_H_
+#define ART_RUNTIME_TWODROID_FILTER_FILTER_H_
+
+
+#include <set>
+#include <string>
+#include "twodroid/Constant.h"
+#include "interpreter/interpreter_common.h"
+
+namespace gossip{
+
+	class Filter
+	{
+	public:
+		void init						( const std::string & apkDir );
+
+		bool class_should_be_traced		( const char* const className );
+		//bool method_should_be_traced	( const Method * const m );
+		//bool object_should_be_traced	( const Object * const obj );
+		bool method_should_be_traced	( const char* const cn, const char* const mn );
+		//bool record_should_be_opened	( uint8_t c );
+		bool dex_should_be_unpack 		( const char* const cn, const char* const mn );
+
+	private:
+		void		init_filter				( const std::string & n, std::set<u4> & filter );
+		void 		init_recordFlag			( const std::string & n );
+		std::set<u4>	list_to_hash_filter		( const char* const filename );
+
+		std::set<u4>	classFilter_;
+		std::set<u4>	methodFilter_;
+		//std::set<u4>	objectFilter_;
+		std::set<u4>	unpackFilter_;
+		std::string		apkDir_;
+		uint8_t			recordFlag_;
+	};
+
+
+
+
+
+
+
+
+
+}//end of namespace
+
+
+
+
+#endif
