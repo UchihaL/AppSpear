@@ -13,8 +13,11 @@ or replace /system/lib/libart.so in Android OS 5.0.1 with out/libart(AppSpear).s
 ### Usage:
 
 config file:
+
 class.dlist: unpack entry point class
+
 unpack.dlist: unpack entry point method
+
 flag.dlist: 111001 (used for function control)
 
 Push config files (samples in /sample) into data/data/(pkgname) file path then start app.
