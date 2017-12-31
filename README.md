@@ -21,4 +21,5 @@ unpack.dlist: unpack entry point method
 flag.dlist: 111001 (used for function control)
 
 Push config files (samples in /sample) into data/data/(pkgname) file path then start app.
+
 If you have any question, please contact me via emails to uchihalbd@gmail.com
